@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ticket_type: one
+  scanned_at: 2024-10-08 16:36:04
+  user: one
+
+two:
+  ticket_type: two
+  scanned_at: 2024-10-08 16:36:04
+  user: two

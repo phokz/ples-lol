@@ -1,0 +1,24 @@
+<div>
+  <h1 class="font-bold text-xl">Tickets</h1>
+</div>
+
+<%- Ticket.all.each do |ticket| %>
+Name: <%= ticket.ticket_type.name %><br/>
+<%
+
+
+qrcode = RQRCode::QRCode.new("HTTPS://PLES.LOL/#{ticket.digest}",  mode: :alphanumeric)
+
+svg = qrcode.as_svg(
+  color: "000",
+  offset: 20,
+  shape_rendering: "crispEdges",
+  module_size: 11,
+  standalone: true,
+  use_path: true
+)
+%>
+<%= svg.html_safe %>
+<br/>
+<%= link_to 'click', "http://localhost:3000/#{ticket.digest}" %>
+<% end %>
