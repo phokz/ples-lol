@@ -48,3 +48,5 @@ group :test do
 end
 
 gem "rqrcode", "~> 2.2"
+gem 'html2haml', '~> 2.3'
+gem "haml-rails", "~> 2.0"

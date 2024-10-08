@@ -16,5 +16,4 @@ private
   def secret
     'sul a pepr'
   end
-
 end
