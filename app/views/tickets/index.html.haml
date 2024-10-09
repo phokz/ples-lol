@@ -1,10 +1,13 @@
 %div
   %h1.font-bold.text-xl Tickets
-- Ticket.all.each do |ticket|
-  Name: #{ticket.ticket_type.name}
-  %br/
-  - qrcode = RQRCode::QRCode.new("HTTPS://PLES.LOL/#{ticket.digest}",  mode: :alphanumeric)
-  - svg = qrcode.as_svg(color: "000", offset: 20, shape_rendering: "crispEdges", module_size: 11, standalone: true, use_path: true)
-  = svg.html_safe
-  %br/
-  = link_to 'click', "http://localhost:3000/#{ticket.digest}"
+  %table.table-auto
+    %thead
+      %th Id
+      %th Typ lístku
+      %th Datum a čas skenování
+    %tbody
+      - Ticket.all.each do |ticket|
+        %tr.odd:bg-white.even:bg-slate-50
+          %td= ticket.id
+          %td= ticket.ticket_type.name
+          %td= ticket.scanned_at
