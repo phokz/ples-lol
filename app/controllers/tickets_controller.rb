@@ -11,4 +11,7 @@ class TicketsController < ApplicationController
         render action: 'fuj'
      end
   end
+  def cajk
+    @ticket = Ticket.first
+  end
 end

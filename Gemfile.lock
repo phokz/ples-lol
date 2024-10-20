@@ -127,6 +127,10 @@ GEM
       ruby_parser (~> 3.5)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
+    importmap-rails (2.0.3)
+      actionpack (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.7.2)
     irb (1.14.1)
       rdoc (>= 4.0.0)
@@ -333,6 +337,7 @@ DEPENDENCIES
   debug
   haml-rails (~> 2.0)
   html2haml (~> 2.3)
+  importmap-rails (~> 2.0)
   jbuilder
   mysql2 (~> 0.5)
   puma (>= 5.0)
