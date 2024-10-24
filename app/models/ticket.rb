@@ -11,6 +11,10 @@ class Ticket < ApplicationRecord
   def calc_digest
     Digest::SHA2.new(256).hexdigest(secret+id.to_s).upcase[0..7]
   end
+  
+  def generate_ticket_pdf
+
+  end
 
 private
   def secret
