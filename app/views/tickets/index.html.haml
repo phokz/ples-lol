@@ -1,22 +1,15 @@
-%div
-  %h1.font-bold.text-xl Tickets
-  %table.table-auto
-    %thead
-      %th Id
-      %th Typ lístku
-      %th Datum a čas skenování
-    %tbody
-      - Ticket.all.each do |ticket|
-        %tr.odd:bg-white.even:bg-slate-50
-          %td= ticket.id
-          %td= ticket.ticket_type.name
-          %td= ticket.scanned_at
-%div.grid.md:grid-cols-4.grid-cols-2.gap-4
-  %div.text-center.p-3.bg-red-500.rounded 1
-  %div.text-center.p-3.bg-red-500.rounded 1
-  %div.text-center.p-3.bg-red-500.rounded 1
-  %div.text-center.p-3.bg-red-500.rounded 1
-  %div.text-center.p-3.bg-red-500.rounded 1
-  %div.text-center.p-3.bg-red-500.rounded 1
-  %div.text-center.p-3.bg-red-500.rounded 1
-  %div.text-center.p-3.bg-red-500.rounded 1
+%div.text-center
+  %h1.font-bold.text-xl Lístky
+  %small Pro hledání zmáčkni CTRL + F (jsem línej)
+  %div.grid.justify-center
+    %table.table-auto
+      %thead
+        %th.p-2 Id
+        %th.p-2 Typ lístku
+        %th.p-2 Datum a čas skenování
+      %tbody
+        - Ticket.all.each do |ticket|
+          %tr.odd:bg-white.even:bg-slate-50
+            %td= ticket.id
+            %td= ticket.ticket_type.name
+            %td= ticket.scanned_at
