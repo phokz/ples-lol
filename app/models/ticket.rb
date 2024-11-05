@@ -1,5 +1,5 @@
 class Ticket < ApplicationRecord
-  belongs_to :ticket_type
+  belongs_to :table
   belongs_to :user, optional: true
 
   after_create :set_digest

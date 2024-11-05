@@ -1,0 +1,43 @@
+require 'rmagick'
+require 'rqrcode' # Library for generating QR codes
+
+# Load the template image
+template = Magick::Image.read("/home/bakterio/Programming/ples-lol/app/assets/images/ticket.jpeg").first
+
+# Set up the text to annotate
+title = "Concert Ticket"
+subtitle = "The Retro Music Fest"
+details = "Date: 12th December 2024\nTime: 7:00 PM\nVenue: Central Park, NY"
+
+# Annotate title
+draw = Magick::Draw.new
+draw.font = 'Arial-Bold'
+draw.pointsize = 30
+draw.fill = 'white'
+draw.gravity = Magick::NorthGravity
+draw.annotate(template, 0, 0, 0, 30, title)
+
+# Annotate subtitle
+draw.pointsize = 20
+draw.gravity = Magick::NorthGravity
+draw.annotate(template, 0, 0, 0, 70, subtitle)
+
+# Annotate details
+draw.pointsize = 15
+draw.gravity = Magick::CenterGravity
+draw.annotate(template, 0, 0, 0, 100, details)
+
+# Generate QR code
+qr = RQRCode::QRCode.new("https://example.com/ticket/12345")
+qr_image = qr.as_png(size: 100)
+
+# Convert QR code to ImageMagick format
+qr_magick = Magick::Image.from_blob(qr_image.to_blob) { format = 'png' }.first
+qr_magick.resize!(100, 100)
+
+# Composite QR code onto template
+template.composite!(qr_magick, Magick::SouthEastGravity, 20, 20, Magick::OverCompositeOp)
+
+# Save the final ticket image
+template.write("output.png")
+
