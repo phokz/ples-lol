@@ -8,10 +8,6 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Ticket.delete_all
-Table.delete_all
-TableLocation.delete_all
-
 
 def load_tables(table_location, tables)
   table_counter = 1
@@ -25,7 +21,7 @@ def load_tables(table_location, tables)
 end
 
 # Hlavní sál
-hl = TableLocation.create!(name: "Majekovského (hlavní) sál", price: 600)
+hl = TableLocation.create!(name: "Majekovského sál", price: 600)
 
 # number of the first table, number of the last table, table capacity (number of seats)
 hl_tables = [

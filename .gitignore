@@ -40,3 +40,4 @@
 
 #Database config with database credentials
 config/database.yml
+/ticket-generator/output
