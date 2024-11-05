@@ -21,7 +21,7 @@ def load_tables(table_location, tables)
 end
 
 # Hlavní sál
-hl = TableLocation.create!(name: "Majekovského sál", price: 600)
+hl = TableLocation.create!(name: "Majakovského sál", price: 600)
 
 # number of the first table, number of the last table, table capacity (number of seats)
 hl_tables = [
