@@ -80,7 +80,7 @@ load_tables(ss, ss_tables)
 s = TableLocation.create!(name: "Stání", price: 350)
 
 s_tables = [
-  [1, 1, 155]
+  [1, 1, 156]
 ]
 
 load_tables(s, s_tables)
