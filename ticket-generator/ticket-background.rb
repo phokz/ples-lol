@@ -15,7 +15,7 @@ end
 names_to_annotate = ""
 400.times do
   row = symbol + " "
-  45.times do
+  45.times do # udělat, aby nebyly jména vedle sebe
     row += names.sample + " " + symbol + " "
   end
   names_to_annotate += row + "\n"
