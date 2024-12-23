@@ -54,6 +54,6 @@ gem 'rmagick', '~> 6.0', '>= 6.0.1'
 gem 'html2haml', '~> 2.3'
 gem "haml-rails", "~> 2.0"
 
-gem "importmap-rails", "~> 2.0"
+gem "importmap-rails", "~> 2.1"
 
 gem "image_processing", "~> 1.13"
